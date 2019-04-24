@@ -102,3 +102,56 @@ int main(){
 	while(ms.IsEmpty() != true){
 			char tmp=ms.Top();
 			ms.pop();
+			p+=tmp;
+			}
+			ms.push(r[i]);
+			}	
+		}
+	}
+	while(ms.IsEmpty() != true){
+			char tmp=ms.Top();
+			ms.pop();
+			p+=tmp;
+	}
+	
+	for(int i=0;i<pjgkata;i++){
+		if (p[i] >= '0' && p[i] <= '9'){
+			ms.push(p[i]);
+		}
+		if ( p[i]=='+' || p[i]=='-' || p[i]=='*' || p[i]=='/' ){
+			int A=ms.Top() - '0';  	//Simpan top pada variabel A
+			ms.pop();				//Pop Stack
+			int B=ms.Top() - '0';	//Simpan top pada variabel B
+			ms.pop();				//Pop Stack
+			if (p[i]=='+'){
+				hasil=B+A;
+				char tmphasil=hasil + '0'; //Konversi dari int ke char
+				ms.push(tmphasil);
+			}
+			else if (p[i]=='-'){
+				hasil=B-A;
+				char tmphasil=hasil + '0';
+				ms.push(tmphasil);
+			}
+			else if (p[i]=='*'){
+				hasil=B*A;
+				char tmphasil=hasil + '0';
+				ms.push(tmphasil);
+			}
+			else if (p[i]=='/'){
+				hasil=B/A;
+				char tmphasil=hasil + '0';
+				ms.push(tmphasil);
+			}
+		}
+	}
+	
+	char charhasil=ms.Top();
+	int hasilakhir=charhasil - '0'; //Konversi dari char ke int
+	
+	
+	//Print Postfix dan Hasil Akhir
+	cout<<"Bentuk Postfix : "<<p<<endl;
+	cout<<"Hasil Akhir = "<<hasilakhir<<endl;
+	return 0;
+}
