@@ -70,7 +70,9 @@ int main(){
 	stack ms;
 	int pjgkata,hasil;
 	string r,p;
-	cout<<"-------------IMPLEMENTASI BENTUK INFIX KE POSTFIX-------------";
+	cout<<"----------------------IMPLEMENTASI BENTUK INFIX KE POSTFIX----------------------";
+	cout<<"\n Github : https://github.com/petruk-ciwi/Using-a-Stack-to-Evaluate-an-Expression";
+	cout<<"--------------------------------------------------------------------------------";
 	cout<<"\n\nBentuk Infix : ";
 	getline(cin,r);
 	pjgkata=r.length();
