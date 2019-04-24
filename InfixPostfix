@@ -3,6 +3,13 @@
 using namespace std;
 #define MAX_SIZE 200
 
+
+//lita amelia 1817051001
+//rahmayanti k 1817051061
+//sasya salsabila janerdi 1867051001
+//atika indah 1857051009
+
+
 class stack{
 	//private:
 		char A[MAX_SIZE];
