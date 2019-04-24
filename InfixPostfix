@@ -38,7 +38,7 @@ class stack{
 	int Top(){
 		return A[top];
 	}
-	bool IsEmpty(){
+		bool IsEmpty(){
 		if(top==-1) {
 			return true;
 		}
@@ -103,15 +103,6 @@ int main(){
 				char tmp=ms.Top();
 				ms.pop();
 				p+=tmp;
-			}
-			ms.push(r[i]);
-			}	
-		}
-	}
-	while(ms.IsEmpty() != true){
-			char tmp=ms.Top();
-			ms.pop();
-			p+=tmp;
 			}
 			ms.push(r[i]);
 			}	
