@@ -69,3 +69,36 @@ int main(){
 	pjgkata=r.length();
 	for (int i=0;i<pjgkata;i++){
 		if (r[i] >= '0' && r[i] <= '9'){
+		     	p+=r[i];
+		}
+		else if (r[i] ==  '('){
+			ms.push(r[i]);
+		}
+		else if (r[i] == ')'){
+			while (ms.IsEmpty() != true && ms.Top() != '('){
+				char tmp=ms.Top();
+				ms.pop();
+				p+=tmp;
+			}
+			if (ms.Top() == '('){
+				ms.pop();
+			}
+		}
+		if (r[i] == '+' || r[i] == '-' || r[i] == '*' || r[i] == '/'){
+			if (ms.IsEmpty() == true || ms.Top() == '('){
+				ms.push(r[i]);
+			}
+		
+		else{
+			while (ms.IsEmpty() != true && ms.Top() != '(' && before(r[i]) <= before(ms.Top())){
+				char tmp=ms.Top();
+				ms.pop();
+				p+=tmp;
+			}
+			ms.push(r[i]);
+			}	
+		}
+	}
+	while(ms.IsEmpty() != true){
+			char tmp=ms.Top();
+			ms.pop();
