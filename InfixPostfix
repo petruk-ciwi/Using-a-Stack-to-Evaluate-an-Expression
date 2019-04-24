@@ -1,4 +1,34 @@
-#include<iostream>
+#include <iostream>
+#include <cstring>
 using namespace std;
-struct node {
-};
+#define MAX_SIZE 200
+
+class stack{
+	//private:
+		char A[MAX_SIZE];
+		char top;
+	public:
+		stack(){
+			top = -1;
+		}
+	
+	void push(char x){
+		if(top==MAX_SIZE-1){
+			cout<<"Melebihi Batas Array"<<endl;
+			return;
+		}
+		A[++top]=x;
+	}
+	
+	void pop(){
+		if(top==-1){
+			cout<<"Tidak ada elemen yang dapat di POP"<<endl;
+			return;
+		}
+		top--;
+	}
+	
+	int Top(){
+		return A[top];
+	}
+	
